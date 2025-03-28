@@ -1,1 +1,1 @@
-# CMSC320_FinalProject
+# College Basketball Machine Learning Model for CMSC320

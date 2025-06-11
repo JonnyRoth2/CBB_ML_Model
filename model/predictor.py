@@ -112,11 +112,14 @@ def predict_winner(team1, team2, home):
     # print(f"Logistic Regression Win Probability for {team2}: {team2_win_prob}")
     if team1_win_prob>team2_win_prob:
       print(f"Most likely for {team1} to win in Log Reg")
+      return [team1, team1_win_prob]
     else:
       print(f"Most likely for {team2} to win in Log Reg")
-    matchup1.to_csv('matchup.csv', index=False)
+      return [team2, team2_win_prob]
+    # matchup1.to_csv('matchup.csv', index=False)
     # display(team1_matchup)
     # display(team2_matchup)
+    
 
 def predict_spread(team1, team2, home):
 

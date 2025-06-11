@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Basketball Predictor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>College Basketball Predictor</h1>
+        
+        <div class="team-selection">
+            <div class="team-dropdown">
+                <select id="team1" required>
+                    <option value="">Select Home Team</option>
+                    <option value="Duke">Duke Blue Devils</option>
+                    <option value="North Carolina">North Carolina Tar Heels</option>
+                    <option value="Kentucky">Kentucky Wildcats</option>
+                    <option value="Kansas">Kansas Jayhawks</option>
+                    <option value="Gonzaga">Gonzaga Bulldogs</option>
+                    <option value="UCLA">UCLA Bruins</option>
+                    <option value="Arizona">Arizona Wildcats</option>
+                    <option value="Michigan State">Michigan State Spartans</option>
+                    <option value="Villanova">Villanova Wildcats</option>
+                    <option value="Virginia">Virginia Cavaliers</option>
+                    <option value="Purdue">Purdue Boilermakers</option>
+                    <option value="Texas">Texas Longhorns</option>
+                    <option value="Auburn">Auburn Tigers</option>
+                    <option value="Tennessee">Tennessee Volunteers</option>
+                    <option value="Arkansas">Arkansas Razorbacks</option>
+                    <option value="Houston">Houston Cougars</option>
+                    <option value="Baylor">Baylor Bears</option>
+                    <option value="Wisconsin">Wisconsin Badgers</option>
+                    <option value="Illinois">Illinois Fighting Illini</option>
+                    <option value="Florida State">Florida State Seminoles</option>
+                    <option value="Ohio State">Ohio State Buckeyes</option>
+                    <option value="Michigan">Michigan Wolverines</option>
+                    <option value="Iowa">Iowa Hawkeyes</option>
+                    <option value="Alabama">Alabama Crimson Tide</option>
+                    <option value="LSU">LSU Tigers</option>
+                    <option value="Oregon">Oregon Ducks</option>
+                    <option value="USC">USC Trojans</option>
+                    <option value="Indiana">Indiana Hoosiers</option>
+                    <option value="Maryland">Maryland Terrapins</option>
+                    <option value="Connecticut">Connecticut Huskies</option>
+                </select>
+            </div>
+            
+            <div class="vs-text">VS</div>
+            
+            <div class="team-dropdown">
+                <select id="team2" required>
+                    <option value="">Select Away Team</option>
+                    <option value="Duke">Duke Blue Devils</option>
+                    <option value="North Carolina">North Carolina Tar Heels</option>
+                    <option value="Kentucky">Kentucky Wildcats</option>
+                    <option value="Kansas">Kansas Jayhawks</option>
+                    <option value="Gonzaga">Gonzaga Bulldogs</option>
+                    <option value="UCLA">UCLA Bruins</option>
+                    <option value="Arizona">Arizona Wildcats</option>
+                    <option value="Michigan State">Michigan State Spartans</option>
+                    <option value="Villanova">Villanova Wildcats</option>
+                    <option value="Virginia">Virginia Cavaliers</option>
+                    <option value="Purdue">Purdue Boilermakers</option>
+                    <option value="Texas">Texas Longhorns</option>
+                    <option value="Auburn">Auburn Tigers</option>
+                    <option value="Tennessee">Tennessee Volunteers</option>
+                    <option value="Arkansas">Arkansas Razorbacks</option>
+                    <option value="Houston">Houston Cougars</option>
+                    <option value="Baylor">Baylor Bears</option>
+                    <option value="Wisconsin">Wisconsin Badgers</option>
+                    <option value="Illinois">Illinois Fighting Illini</option>
+                    <option value="Florida State">Florida State Seminoles</option>
+                    <option value="Ohio State">Ohio State Buckeyes</option>
+                    <option value="Michigan">Michigan Wolverines</option>
+                    <option value="Iowa">Iowa Hawkeyes</option>
+                    <option value="Alabama">Alabama Crimson Tide</option>
+                    <option value="LSU">LSU Tigers</option>
+                    <option value="Oregon">Oregon Ducks</option>
+                    <option value="USC">USC Trojans</option>
+                    <option value="Indiana">Indiana Hoosiers</option>
+                    <option value="Maryland">Maryland Terrapins</option>
+                    <option value="Connecticut">Connecticut Huskies</option>
+                </select>
+            </div>
+        </div>
+        
+        <button class="predict-btn" onclick="predictWinner()">Predict Winner</button>
+        
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <span>Analyzing matchup...</span>
+        </div>
+        
+        <div class="result" id="result">
+            <div class="winner" id="winner"></div>
+            <div class="confidence" id="confidence"></div>
+        </div>
+        
+        <div class="error" id="error"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

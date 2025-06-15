@@ -20,17 +20,21 @@ import os
 
 from data_proc import process_data
 
-process_data()
-current_data = pd.read_csv('Cleaned_2025.csv')
+# process_data()
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+csv_path = os.path.join(BASE_DIR, 'Cleaned_2025.csv')
+current_data = pd.read_csv(csv_path)
 numeric_cols = [
     'Adj. O', 'Adj. D', 'T',
     'eFG%_O', 'TO%_O', 'Reb%_O', 'FTR_O',
     'eFG%_D', 'TO%_D', 'Reb%_D', 'FTR_D', 'hca'
 ]
-
-log_model=joblib.load('log_model.pkl')
-gb_reg=joblib.load('gb_reg.pkl')
-scaler=joblib.load('scaler.pkl')
+log_model_path=os.path.join(BASE_DIR, 'log_model.pkl')
+log_model=joblib.load(log_model_path)
+gb_model_path=os.path.join(BASE_DIR, 'gb_reg.pkl')
+gb_reg=joblib.load(gb_model_path)
+scaler_path=os.path.join(BASE_DIR, 'scaler.pkl')
+scaler=joblib.load(scaler_path)
 
 
 def two_team_matchup(team1, team2):

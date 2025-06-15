@@ -1,5 +1,8 @@
 from flask import Flask, request, render_template, send_from_directory
-
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'model')))
+from predictor import predict_winner
 
 app = Flask(__name__, static_folder='public', static_url_path='')
 
@@ -19,9 +22,7 @@ def predict():
 
 def predict_matchup(home_team, away_team):
 
-    import random
-    confidence = round(random.uniform(50, 100), 2)
-    winner = home_team if random.random() > 0.5 else away_team
+    winner,confidence=predict_winner(home_team, away_team,'n')
     return {'winner': winner, 'confidence': confidence}
 if __name__ == '__main__':
     app.run(debug=True)

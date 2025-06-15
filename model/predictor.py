@@ -157,11 +157,13 @@ def predict_spread(team1, team2, home):
 
     if spread > 0:
       print(f"Most likely for {team1} to win in Gradient Boost by {spread} points")
+      return team1,-spread
     else:
       print(f"Most likely for {team2} to win in Gradient Boost by {-spread} points")
+      return team2,-spread
 
-t1 = input("What is team 1? ")
-t2 = input("What is team 2? ")
-home = input("Is team 1 home? (h for home a for away, n for neutral) ")
-predict_winner(t1,t2,home)
-predict_spread(t1,t2,home)
+# t1 = input("What is team 1? ")
+# t2 = input("What is team 2? ")
+# home = input("Is team 1 home? (h for home a for away, n for neutral) ")
+# predict_winner(t1,t2,home)
+# predict_spread(t1,t2,home)

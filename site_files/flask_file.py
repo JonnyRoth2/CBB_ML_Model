@@ -2,7 +2,7 @@ from flask import Flask, request, render_template, send_from_directory
 import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'model')))
-from predictor import predict_winner
+from predictor import predict_winner, predict_spread
 
 app = Flask(__name__, static_folder='public', static_url_path='')
 
@@ -16,13 +16,10 @@ def predict():
 
     if not team1 or not team2:
         return "Both teams must be selected.", 400
-    prediction = predict_matchup(team1, team2)
 
-    return f"The predicted winner is {prediction['winner']} with {prediction['confidence']}% confidence."
+    winner, confidence = predict_winner(team1, team2, 'n')
+    gb_winner, spread = predict_spread(team1, team2, 'n')
+    return f"The predicted winner is {winner} with {confidence}% confidence. \n The predicted spread and winner through regression model is {gb_winner} with a spread of {spread}."
 
-def predict_matchup(home_team, away_team):
-
-    winner,confidence=predict_winner(home_team, away_team,'n')
-    return {'winner': winner, 'confidence': confidence}
 if __name__ == '__main__':
     app.run(debug=True)

@@ -9,6 +9,9 @@ app = Flask(__name__, static_folder='public', static_url_path='')
 @app.route('/')
 def home():
     return send_from_directory(app.static_folder, 'index.html')
+@app.route('/predictor')
+def predictor():
+    return render_template('predictor.html')
 @app.route('/predict', methods=['POST'])
 def predict():
     team1 = request.form.get('team1')

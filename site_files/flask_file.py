@@ -8,10 +8,10 @@ app = Flask(__name__, static_folder='public', static_url_path='')
 
 @app.route('/')
 def home():
-    return send_from_directory(app.static_folder, 'index.html')
-@app.route('/predictor')
-def predictor():
-    return render_template('predictor.html')
+     return send_from_directory(app.static_folder, 'predictor.html')
+# @app.route('/')
+# def predictor():
+#     return render_template('predictor.html')
 @app.route('/predict', methods=['POST'])
 def predict():
     team1 = request.form.get('team1')
@@ -22,7 +22,7 @@ def predict():
 
     winner, confidence = predict_winner(team1, team2, hca)
     gb_winner, spread = predict_spread(team1, team2, hca)
-    return f"The predicted winner is {winner} with {confidence}% confidence. \n The predicted spread and winner through regression model is {gb_winner} with a spread of {spread}."
+    return f"The predicted winner is {winner} with {confidence}% confidence. <br>\n The predicted spread and winner through regression model is {gb_winner} with a spread of {spread}."
 
 if __name__ == '__main__':
     app.run(debug=True)

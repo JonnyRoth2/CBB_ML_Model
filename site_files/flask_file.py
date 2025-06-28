@@ -24,6 +24,7 @@ def predict():
     winner, confidence = predict_winner(team1, team2, hca)
     gb_winner, spread = predict_spread(team1, team2, hca)
     spread = abs(spread)
+    spread = round(spread, 2)
 
     return render_template(
         'results.html',

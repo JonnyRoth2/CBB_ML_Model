@@ -22,6 +22,7 @@ def predict():
 
     winner, confidence = predict_winner(team1, team2, hca)
     gb_winner, spread = predict_spread(team1, team2, hca)
+    spread = abs(spread)
     return f"The predicted winner is {winner} with {confidence}% confidence. <br>\n The predicted spread and winner through regression model is {gb_winner} with a spread of {spread}."
 
 if __name__ == '__main__':

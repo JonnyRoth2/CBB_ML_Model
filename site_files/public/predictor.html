@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>College Basketball Predictor</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="script" href="script.js">
+    <link rel="stylesheet" href="predictor_style.css">
+    <link rel="script" href="hca_script.js">
 </head>
 <body>
     <div class="container">
@@ -90,14 +90,13 @@
                 </div>
             </div>
             <br>
-            <div class="hca">
-                <select id="hca" name="hca" required>
-                    <option value="h">Home</option>
-                    <option value="a">Away</option>
-                    <option value="n">Neutral</option>
-                </select>
-            </div>
-            <input type="submit" value="Predict Matchup">
+            <div class="hca" id="hca-buttons">
+                <input type="hidden" id="hca" name="hca" required>
+                <button type="button" class="hca-btn" data-value="h">Home</button>
+                <button type="button" class="hca-btn" data-value="a">Away</button>
+                <button type="button" class="hca-btn" data-value="n">Neutral</button>
+              </div>
+            <input type="submit" value="Predict Matchup" id="submit_button">
         </form>
         
         <div class="loading" id="loading">
@@ -111,6 +110,6 @@
         <div class="error" id="error"></div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="hca_script.js"></script>
 </body>
 </html>

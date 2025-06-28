@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Prediction Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='results.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🏆 Matchup Result</h1>
+    <p>{{ team1 }} vs {{ team2 }}</p>
+    <h2>Predicted Winner: <span class="winner">{{ winner }}</span></h2>
+
+    <a href="/" class="back-btn">← Try another prediction</a>
+  </div>
+</body>
+</html>

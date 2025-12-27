@@ -185,4 +185,6 @@ def process_data():
  
     historical_df.to_csv("Cleaned_Historicals.csv",index=False)
     current_df.to_csv("Cleaned_2025.csv",index=False)
-#process_data()
+    
+if __name__ == "__main__":
+    process_data()

@@ -1,4 +1,4 @@
-# College Basketball Machine Learning Model for CMSC320
+# College Basketball Machine Learning Model
 The jupyter file when ran and used correctly accurately predicts the outcome of basketball games with around a 80% accuracy and predicts the spread at around a 51-52% accuracy with data exploration and finding the most important data points in winning or losing games.
 **How to go about reading this repo**
 1. The Jupyter Notebook gives detailed statistical findings of the data through statistical tests over the data as well as analysis of different variations of machine learning models. If you want a thourough understanding of how the model works god through the Notebook and read the analysis.
